@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Threading.Tasks;
 using Simple.Data.Ado;
 using Simple.Data.Ado.Schema;
+using Simple.Data.Oracle.Configuration;
 using Simple.Data.Oracle.ReflectionSql;
 using System.Linq;
 
 namespace Simple.Data.Oracle
 {
-    internal class SqlReflection
+    internal class SqlReflection : ISchemaReflector
     {
         private readonly OracleConnectionProvider _provider;
         private readonly string _schema;
@@ -19,14 +19,14 @@ namespace Simple.Data.Oracle
         private List<Table> _tables;
         private List<Tuple<string,string,DbType,int>> _columnsFlat;
         private List<Tuple<string, string>> _pks;
-        private IEnumerable<ForeignKey> _fks;
+        private IList<ForeignKey> _fks;
         private List<Procedure> _procs;
         private List<Tuple<string, string, Type, ParameterDirection, string>> _args;
 
         public SqlReflection(OracleConnectionProvider provider)
         {
             _provider = provider;
-            _schema = ConfigurationManager.AppSettings.AllKeys.Contains("Simple.Data.Oracle.Schema") ? ConfigurationManager.AppSettings["Simple.Data.Oracle.Schema"] : provider.UserOfConnection;
+            _schema = new ConfigurationProvider().ConnnectionSchemaOverride ?? provider.UserOfConnection;
             _buildData = new Task(BuildData);
             _buildData.Start();
         }
@@ -40,7 +40,7 @@ namespace Simple.Data.Oracle
             }
         }
 
-        public IEnumerable<Table> Tables
+        public IList<Table> Tables
         {
             get
             {
@@ -49,7 +49,7 @@ namespace Simple.Data.Oracle
             }
         }
 
-        public IEnumerable<Tuple<string,string,DbType,int>> Columns
+        public IList<Tuple<string,string,DbType,int>> Columns
         {
             get
             {
@@ -58,7 +58,7 @@ namespace Simple.Data.Oracle
             }
         }
 
-        public IEnumerable<ForeignKey> ForeignKeys
+        public IList<ForeignKey> ForeignKeys
         {
             get
             {
@@ -67,7 +67,7 @@ namespace Simple.Data.Oracle
             }
         }
 
-        public IEnumerable<Procedure> Procedures
+        public IList<Procedure> Procedures
         {
             get
             {

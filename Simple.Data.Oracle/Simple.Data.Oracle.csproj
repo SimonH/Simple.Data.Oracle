@@ -166,8 +166,27 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ArgumentCollection.cs" />
+    <Compile Include="Configuration\ArgumentElement.cs" />
+    <Compile Include="Configuration\ColumnCollection.cs" />
+    <Compile Include="Configuration\ColumnElement.cs" />
+    <Compile Include="Configuration\ConfigReflector.cs" />
+    <Compile Include="Configuration\ConfigSchemaProvider.cs" />
+    <Compile Include="Configuration\ConfigurationProvider.cs" />
+    <Compile Include="Configuration\IConfigurationManager.cs" />
+    <Compile Include="Configuration\IConfigurationProvider.cs" />
+    <Compile Include="Configuration\NamedConfigurationElement.cs" />
+    <Compile Include="Configuration\NamedConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\ProcedureCollection.cs" />
+    <Compile Include="Configuration\ProcedureElement.cs" />
+    <Compile Include="Configuration\SchemaElement.cs" />
+    <Compile Include="Configuration\SchemaCollection.cs" />
+    <Compile Include="Configuration\SDOConfigSection.cs" />
+    <Compile Include="Configuration\TableViewCollection.cs" />
+    <Compile Include="Configuration\TableViewElement.cs" />
     <Compile Include="DbTypeConverter.cs" />
     <Compile Include="DbDictionary.cs" />
+    <Compile Include="ISchemaReflector.cs" />
     <Compile Include="OracleConnectionProvider.cs" />
     <Compile Include="OracleCustomQueryBuilder.cs" />
     <Compile Include="OracleFunctionNameConverter.cs" />
@@ -179,6 +198,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DatabaseExtensions.cs" />
     <Compile Include="ReflectionSql\SqlLoader.cs" />
+    <Compile Include="SchemaExtensions.cs" />
+    <Compile Include="SchemaProviderBase.cs" />
     <Compile Include="Sequence.cs" />
     <Compile Include="SqlReflection.cs" />
   </ItemGroup>

@@ -6,6 +6,8 @@ using Simple.Data.Ado.Schema;
 using Devart.Data.Oracle;
 #else
 using Oracle.DataAccess.Client;
+using Simple.Data.Oracle.Configuration;
+
 #endif
 
 namespace Simple.Data.Oracle
@@ -30,7 +32,7 @@ namespace Simple.Data.Oracle
 
         public ISchemaProvider GetSchemaProvider()
         {
-            return new OracleSchemaProvider(this);
+            return new ConfigurationProvider().SchemaProvider ?? new OracleSchemaProvider(this);
         }
 
         public string GetIdentityFunction()
