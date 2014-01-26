@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 #if DEVART
 using Devart.Data.Oracle;
+#elif MANAGEDODP
+using Oracle.ManagedDataAccess.Client;
 #else
 using Oracle.DataAccess.Client;
 #endif
@@ -14,8 +16,9 @@ namespace Simple.Data.Oracle.Tests
     {
         #if DEVART
         const string ConnectionName = "DevartOracle";
-        #endif
-        #if !DEVART
+        #elif MANAGEDODP
+        const string ConnectionName = "ManagedOdpOracle";
+        #else
         const string ConnectionName = "OracleClient";
         #endif
 

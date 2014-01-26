@@ -4,16 +4,20 @@ using Simple.Data.Ado;
 using Simple.Data.Ado.Schema;
 #if DEVART
 using Devart.Data.Oracle;
+#elif MANAGEDODP
+using Oracle.ManagedDataAccess.Client;
+using Simple.Data.Oracle.Configuration;
 #else
 using Oracle.DataAccess.Client;
 using Simple.Data.Oracle.Configuration;
-
 #endif
 
 namespace Simple.Data.Oracle
 {
     #if DEVART 
     [Export("Devart.Data.Oracle", typeof(IConnectionProvider))]
+    #elif MANAGEDODP
+    [Export("Oracle.ManagedDataAccess.Client", typeof(IConnectionProvider))]
     #else
     [Export("Oracle.DataAccess.Client", typeof(IConnectionProvider))]
     #endif
