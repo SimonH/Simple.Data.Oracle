@@ -9,6 +9,8 @@ using Simple.Data.Ado.Schema;
 using ResultSet = System.Collections.Generic.IEnumerable<System.Collections.Generic.IDictionary<string, object>>;
 #if DEVART
 using Devart.Data.Oracle;
+#elif MANAGEDODP
+using Oracle.ManagedDataAccess.Client;
 #else
 using Oracle.DataAccess.Client;
 #endif

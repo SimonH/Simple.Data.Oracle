@@ -3,6 +3,10 @@ using System.Data;
 using NUnit.Framework;
 #if DEVART
 using Devart.Data.Oracle;
+#elif MANAGEDODP
+using Oracle.ManagedDataAccess.Client;
+#else
+using Oracle.DataAccess.Client;
 #endif
 
 namespace Simple.Data.Oracle.Tests

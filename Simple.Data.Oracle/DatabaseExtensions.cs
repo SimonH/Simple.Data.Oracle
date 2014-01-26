@@ -5,8 +5,9 @@ using Simple.Data.Ado.Schema;
 using System.Linq;
 #if DEVART
 using Devart.Data.Oracle;
-#endif
-#if !DEVART
+#elif MANAGEDODP
+using Oracle.ManagedDataAccess.Client;
+#else
 using Oracle.DataAccess.Client;
 #endif
 
