@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Simple.Data.Oracle.ManagedDataAccess</id>
+    <version>0.18.0.3</version>
+    <authors>Frank Quednau, Simon Hanlon</authors>
+    <owners>Simon Hanlon</owners>
+    <description>Oracle Provider for the Simple.Data data access library using Managed ODP.NET driver.</description>
+    <projectUrl>http://github.com/simonH/Simple.Data.Oracle</projectUrl>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <iconUrl>http://simplefx.org/images/simpledata100x100.png</iconUrl>
+    <tags>oracle database data ado .net40 odp.net</tags>
+    <language>en-us</language>
+    <dependencies>
+      <dependency id="Simple.Data.Ado" version="[0.18.3.1]" />
+      <dependency id="odp.net.managed" version="121.1.1" />
+    </dependencies>
+  </metadata>
+</package>

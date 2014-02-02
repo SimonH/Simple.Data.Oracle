@@ -5,11 +5,11 @@
     <version>0.18.0.3</version>
     <authors>Frank Quednau, Simon Hanlon</authors>
     <owners>Simon Hanlon</owners>
-    <description>Oracle Provider for the Simple.Data data access library.</description> 
+    <description>Oracle Provider for the Simple.Data data access library.</description>
     <projectUrl>http://github.com/simonH/Simple.Data.Oracle</projectUrl>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
     <iconUrl>http://simplefx.org/images/simpledata100x100.png</iconUrl>
-    <tags>oracle database data ado .net40</tags>
+    <tags>oracle database data ado .net40 odp odac</tags>
     <language>en-us</language>
     <dependencies>
       <dependency id="Simple.Data.Ado" version="[0.18.3.1]" />

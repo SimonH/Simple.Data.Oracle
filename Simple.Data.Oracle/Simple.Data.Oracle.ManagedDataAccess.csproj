@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDECE7DC-B39F-436A-9BCB-1780F10E9C8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Simple.Data.Oracle</RootNamespace>
+    <AssemblyName>Simple.Data.Oracle.ManagedDataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Simple.Data.Oracle\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <UseManagedOdpProvider>True</UseManagedOdpProvider>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\ManagedOdpDebug\</OutputPath>
+    <IntermediateOutputPath>obj\ManagedOdpDebug\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;MANAGEDODP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <UseManagedOdpProvider>True</UseManagedOdpProvider>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\ManagedOdpRelease\</OutputPath>
+    <IntermediateOutputPath>obj\ManagedOdpRelease\</IntermediateOutputPath>
+    <DefineConstants>TRACE;MANAGEDODP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <UseManagedOdpProvider>True</UseManagedOdpProvider>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\ManagedOdpDebug\</OutputPath>
+    <IntermediateOutputPath>obj\x86\ManagedOdpDebug\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;MANAGEDODP</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <UseManagedOdpProvider>True</UseManagedOdpProvider>
+    <OutputPath>bin\x86\ManagedOdpRelease\</OutputPath>
+    <IntermediateOutputPath>obj\x86\ManagedOdpRelease\</IntermediateOutputPath>
+    <DefineConstants>TRACE;MANAGEDODP</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data, Version=0.18.3.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Simple.Data.Core.0.18.3.1\lib\net40\Simple.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.Ado, Version=0.18.3.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Simple.Data.Ado.0.18.3.1\lib\net40\Simple.Data.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ArgumentCollection.cs" />
+    <Compile Include="Configuration\ArgumentElement.cs" />
+    <Compile Include="Configuration\ColumnCollection.cs" />
+    <Compile Include="Configuration\ColumnElement.cs" />
+    <Compile Include="Configuration\ConfigReflector.cs" />
+    <Compile Include="Configuration\ConfigSchemaProvider.cs" />
+    <Compile Include="Configuration\ConfigurationProvider.cs" />
+    <Compile Include="Configuration\IConfigurationManager.cs" />
+    <Compile Include="Configuration\IConfigurationProvider.cs" />
+    <Compile Include="Configuration\NamedConfigurationElement.cs" />
+    <Compile Include="Configuration\NamedConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\ProcedureCollection.cs" />
+    <Compile Include="Configuration\ProcedureElement.cs" />
+    <Compile Include="Configuration\SchemaElement.cs" />
+    <Compile Include="Configuration\SchemaCollection.cs" />
+    <Compile Include="Configuration\SDOConfigSection.cs" />
+    <Compile Include="Configuration\TableViewCollection.cs" />
+    <Compile Include="Configuration\TableViewElement.cs" />
+    <Compile Include="DbTypeConverter.cs" />
+    <Compile Include="DbDictionary.cs" />
+    <Compile Include="ISchemaReflector.cs" />
+    <Compile Include="OracleConnectionProvider.cs" />
+    <Compile Include="OracleCustomQueryBuilder.cs" />
+    <Compile Include="OracleFunctionNameConverter.cs" />
+    <Compile Include="OracleInserter.cs" />
+    <Compile Include="OraclePager.cs" />
+    <Compile Include="OracleProcedureExecutor.cs" />
+    <Compile Include="OracleQueryBuilder.cs" />
+    <Compile Include="OracleSchemaProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DatabaseExtensions.cs" />
+    <Compile Include="ReflectionSql\SqlLoader.cs" />
+    <Compile Include="SchemaExtensions.cs" />
+    <Compile Include="SchemaProviderBase.cs" />
+    <Compile Include="Sequence.cs" />
+    <Compile Include="SqlReflection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\user_tables_views.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\user_columns.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\table_pks.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\table_fks.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\procedures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\procedure_args.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\schema_columns.txt" />
+    <EmbeddedResource Include="ReflectionSql\table_access_for_schema.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\procedures_for_schema.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
