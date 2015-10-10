@@ -28,7 +28,7 @@ namespace Simple.Data.Oracle.Tests
 
         [Test]
         public void Guid_is_insertable()
-        {
+        { 
             _db.Regions.Insert(RegionId: 5m, RegionName: "Antarctica", RegionUid: Guid.NewGuid());
         }
 
